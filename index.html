@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Dilema del Consejo: simulación educativa sobre inteligencia artificial y resolución de conflictos." />
+  <title>El Dilema del Consejo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" data-action="home" aria-label="Volver al inicio">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>El Dilema del Consejo</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="session-label">Simulación educativa</span>
+        <span class="topbar-dot" aria-hidden="true"></span>
+        <span>Consejo de Seguridad de la ONU</span>
+      </div>
+    </header>
+
+    <section id="app" class="game-area" aria-live="polite"></section>
+
+    <footer class="footer">
+      <p>Una experiencia de aprendizaje sobre IA, paz y seguridad internacional.</p>
+      <button class="text-button" type="button" data-action="how-to-play">¿Cómo funciona?</button>
+    </footer>
+  </main>
+
+  <dialog id="how-to-play" class="info-dialog" aria-labelledby="how-to-play-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Cerrar">×</button>
+      <span class="eyebrow">Guía rápida</span>
+      <h2 id="how-to-play-title">Tú tienes la palabra</h2>
+      <p>Representas a un miembro no permanente del Consejo. En cada nodo, lee el contexto y elige una de las dos tarjetas de decisión.</p>
+      <div class="dialog-list">
+        <div><span>01</span><p>Lee la situación planteada por la Presidencia.</p></div>
+        <div><span>02</span><p>Haz clic en una decisión para revelar su consecuencia inmediata.</p></div>
+        <div><span>03</span><p>Continúa al siguiente dilema hasta alcanzar un desenlace.</p></div>
+      </div>
+      <p class="dialog-note"><strong>No hay una respuesta perfecta.</strong> Cada ruta pone a prueba un equilibrio distinto entre rapidez, legitimidad y control humano.</p>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
