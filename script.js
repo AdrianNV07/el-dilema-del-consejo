@@ -102,6 +102,8 @@ const gameData = {
       badge: "Desenlace · Acción tecnológica",
       title: "El escudo tecnológico",
       summary: "El Consejo opta por una respuesta tecnológica firme. La red de desinformación pierde alcance y se evita parte de la violencia prevista. Sin embargo, quedan abiertos interrogantes sobre los sesgos del sistema, la protección de datos y la posibilidad de una escalada basada en una atribución incorrecta.",
+      verdictTitle: "Votante de acción tecnológica",
+      verdict: "Fuiste contundente y priorizaste la velocidad. Tu voto permitió detectar y contener la campaña antes de que provocara más violencia, pero también dejó más espacio para los falsos positivos, la atribución prematura y la pérdida de control sobre las herramientas utilizadas.",
       takeaways: [
         ["Fortaleza", "Rapidez para detectar y contener campañas coordinadas."],
         ["Tensión", "La velocidad puede superar a la verificación política y jurídica."],
@@ -112,6 +114,8 @@ const gameData = {
       badge: "Desenlace · Prudencia diplomática",
       title: "La mesa de diálogo",
       summary: "El Consejo opta por la prudencia diplomática. La decisión evita una reacción desproporcionada y protege la legitimidad del proceso internacional. La mediación reduce la polarización, aunque la amenaza digital no desaparece de inmediato.",
+      verdictTitle: "Votante de prudencia diplomática",
+      verdict: "Fuiste prudente y priorizaste la legitimidad, el diálogo y la protección frente a una reacción desproporcionada. Eso redujo el riesgo de escalada y preservó los canales de negociación, pero también concedió tiempo a la red insurgente para reorganizarse.",
       takeaways: [
         ["Fortaleza", "Preserva canales de comunicación y evita una escalada prematura."],
         ["Tensión", "El tiempo ganado puede ser utilizado por la red insurgente."],
@@ -122,6 +126,8 @@ const gameData = {
       badge: "Desenlace · Equilibrio",
       title: "La respuesta con salvaguardas",
       summary: "El Consejo combina alerta temprana, supervisión humana y diplomacia. La IA ayuda a identificar patrones y prevenir nuevos ataques, pero no sustituye la investigación ni la negociación. Las medidas son temporales, reversibles y sometidas a auditoría.",
+      verdictTitle: "Votante de equilibrio",
+      verdict: "Mantuviste la cabeza fría y te quedaste justo a la medida. Eso permitió combinar prevención tecnológica con legitimidad diplomática: ganaste capacidad de respuesta sin entregar el control a un algoritmo. La contrapartida es que las salvaguardas hacen más lenta la acción y nunca eliminan por completo el riesgo.",
       takeaways: [
         ["Fortaleza", "Une prevención tecnológica con legitimidad diplomática."],
         ["Tensión", "Las salvaguardas pueden hacer más lenta la respuesta."],
@@ -172,6 +178,11 @@ function renderHome() {
           <span class="eyebrow">Simulación de decisión · Valtoria</span>
           <h1>Cuando la paz también se juega en el código.</h1>
           <p class="hero-lead">Asume el papel de un delegado o delegada del Consejo de Seguridad. Enfrenta una crisis de desinformación generada por IA y decide cómo responder sin perder de vista la diplomacia, los derechos y el control humano.</p>
+          <div class="real-dilemma">
+            <span class="real-dilemma-label">El dilema real</span>
+            <p>La pregunta no es si la IA es buena o mala. El reto es decidir hasta dónde usarla para anticipar violencia, cómo corregir sus sesgos y quién conserva el control cuando el tiempo apremia.</p>
+            <div class="real-dilemma-points"><span>Alerta temprana</span><span>Sesgos y derechos</span><span>Control humano</span></div>
+          </div>
           <div class="hero-actions">
             <button class="primary-button" type="button" data-action="start">Comenzar la sesión <span class="button-arrow">→</span></button>
             <button class="secondary-button" type="button" data-action="how-to-play">Ver instrucciones</button>
@@ -231,7 +242,7 @@ function renderDecision() {
           <button class="choice-card" type="button" data-action="choose" data-option-index="${optionIndex}">
             <span class="choice-topline">
               <span class="choice-letter">${escapeHtml(option.id)}</span>
-              <span class="choice-index">Decisión ${option.id}</span>
+              <span class="choice-index">Decisión ${escapeHtml(option.id)}</span>
             </span>
             <h3>${escapeHtml(option.title)}</h3>
             <p>${escapeHtml(option.description)}</p>
@@ -295,6 +306,11 @@ function renderEnding() {
       </div>
       <div class="ending-card">
         <blockquote>“La mejor respuesta no es necesariamente la más rápida. Es la que mantiene la paz sin renunciar a la verdad, la protección de las personas y la responsabilidad humana.”</blockquote>
+        <div class="verdict-card">
+          <span class="consequence-label">Tu veredicto como votante</span>
+          <h2>${escapeHtml(ending.verdictTitle)}</h2>
+          <p>${escapeHtml(ending.verdict)}</p>
+        </div>
         <div class="ending-takeaways">
           ${ending.takeaways.map(([label, text]) => `<div class="takeaway"><h3>${escapeHtml(label)}</h3><p>${escapeHtml(text)}</p></div>`).join("")}
         </div>

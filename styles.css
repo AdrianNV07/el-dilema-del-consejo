@@ -56,30 +56,6 @@ summary:focus-visible {
   outline-offset: 4px;
 }
 
-.ambient {
-  position: fixed;
-  z-index: -1;
-  border-radius: 999px;
-  pointer-events: none;
-  filter: blur(2px);
-}
-
-.ambient-one {
-  top: -150px;
-  right: -100px;
-  width: 430px;
-  height: 430px;
-  background: rgba(189, 221, 216, 0.43);
-}
-
-.ambient-two {
-  bottom: -180px;
-  left: -120px;
-  width: 390px;
-  height: 390px;
-  background: rgba(246, 215, 196, 0.35);
-}
-
 .app-shell {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
@@ -202,6 +178,49 @@ summary:focus-visible {
   color: var(--ink-soft);
   font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   line-height: 1.7;
+}
+
+.real-dilemma {
+  max-width: 650px;
+  margin-top: 24px;
+  padding: 18px 20px 17px;
+  border-left: 3px solid var(--teal);
+  border-radius: 0 var(--radius-small) var(--radius-small) 0;
+  background: #e8f3f0;
+}
+
+.real-dilemma-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.real-dilemma p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+
+.real-dilemma-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.real-dilemma-points span {
+  padding: 4px 9px;
+  border: 1px solid #b9d7d1;
+  border-radius: 999px;
+  color: #315f5c;
+  background: rgba(255, 255, 255, 0.52);
+  font-size: 0.73rem;
+  font-weight: 700;
 }
 
 .hero-actions {
@@ -771,6 +790,30 @@ summary:focus-visible {
   font-size: clamp(1.22rem, 2.3vw, 1.65rem);
   line-height: 1.6;
   letter-spacing: -0.025em;
+}
+
+.verdict-card {
+  margin: 30px 0 0;
+  padding: 21px 22px 23px;
+  border-radius: var(--radius-medium);
+  background: #edf5f2;
+  border: 1px solid #cfe2dd;
+}
+
+.verdict-card h2 {
+  margin: 11px 0 9px;
+  color: var(--navy-deep);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.62rem);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+.verdict-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.67;
 }
 
 .ending-takeaways {
